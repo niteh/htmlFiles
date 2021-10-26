@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media | MOJS</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"/>
+    <!-- Custom styles for this template-->
+    <link href="../assets/css/admin-theme.min.css" rel="stylesheet"/>
+    <link href="../assets/css/animate.css" rel="stylesheet"/>
+
+    <!--  Page specific Stylesheet  -->
+
+    <link href="../assets/css/custom_page.css" rel="stylesheet"/>
+
+     <!--Responsive-stylesheet for all-->
+
+     <link href="../assets/css/admin-theme-responsive.css" rel="stylesheet"/>
+     <link rel="shortcut icon" href="https://jaljeevanmission.gov.in/sites/default/files/favicon-16x16.png" type="image/png">
+    
+  
+
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <link href="../assets/css/select2.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/chatBot.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/timeline.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../assets/css/jquery.convform.css">
+
+
+     <!-- chatbot-->
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        top: 0!important;
+      }
+
+ 
+      #webchat {
+        height: 100%;
+        width: 100%;
+      }
+      .chat-body{ height: 320px; width: 350px; }
+
+      .chat-screen{
+          width: auto;
+      }
+      .chat-screen .chat-body {
+          padding: 0;
+      }
+
+      #webchat{width: 320px;}
+
+      .goog-te-banner-frame{
+visibility: hidden!important;
+display: none;
+height: 0!important;
+}
+
+      .goog-logo-link{display: none;}
+      .goog-te-gadget{
+  color: transparent !important;
+
+}
+.spinLoader {
+  display: none!important;
+}
+div.conv-form-wrapper div.wrapper-messages {
+  position: relative;
+  height: 300px;
+  max-height: 71vh;
+  overflow-y: scroll;
+  transition: margin 0.1s;
+}
+
+
+div.conv-form-wrapper div#messages {
+  max-height: 45vh;
+  height: auto !important;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+    </style>
+
+
+</head>
+<body>
+  <header>
+    <div class="sticky">
+    <!-- <div class="top-part__block ptb-15">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-7">
+            <label class="float-left custom-lbl">Select Language</label>
+            <div class="lang-div">
+            <select class="form-control">
+              <option>English</option>
+              <option>Hindi</option>
+              <option>Oriya</option>
+            </select>
+           </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="social-link__block text-right">
+              <a href="#"><img src="../assets/images/facebook_icon.png" /></a>
+              <a href="#"><img src="../assets/images/twitter.png" /></a>
+              <a href="#"><img src="../assets/images/linkedin.png" /></a>
+              <a href="#"><img src="../assets/images/google_plus.png" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="middel-part__block">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5 col-lg-5 bg_nav">
+            <div class="logo">
+              <a href="index.html"> <img src="../assets/images/dummy_logo_white.png" alt="Logo"> </a>
+            </div>
+          </div>
+          <div class="col-md-7 col-lg-7">
+
+            <ul class="rightNavArea">
+              <li>
+                <select class="form-control lang-div" id="language">
+                  <option selected><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">English</font></font></option>
+                      <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">हिंदी</font></font></option>
+                      <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ଓଡିଆ</font></font></option>
+                </select>
+              </li>
+              <li>
+                <div class="increaseTextSize">
+                <a id="largeFont"><img src="../assets/images/font_large.png"/></a> 
+              <a id="increaseFont"><img src="../assets/images/increase_font.png"/></a> 
+              <a id="decreaseFont"><img src="../assets/images/decrease_font.png"></a> 
+              <!-- <a id="smallFont">Small Font</a> -  -->
+              <a id="resetFont"><img src="../assets/images/reset_font.png"/></a>
+              </div>
+              </li>
+              <li>
+                <button class="btn btn-login btn-default" onclick="location.href='login.html'">Login</button>
+              </li>
+              <li class="JJM_logoR">
+                <a href="#"><img src="../assets/images/jjmlogo_right.png" alt="no-image"/></a>
+              </li>
+            </ul>
+            
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- core/navbar.component.html -->
+    <nav role="custom-dropdown">
+      <div class="searchItemRight">
+        <form>
+          <input type="text" placeholder="Search">
+          <span class="top-search-submit">
+            <i class="fa fa-search text-white" aria-hidden="true"></i>
+          </span>
+      </form>
+     </div><!--./searchItemRight-->
+      <div class="container-fluid">
+      <!-- <a href="/account/login" class="btn btn-warning btn-login pr-2">Login</a> -->
+      <input type="checkbox" id="button">
+      <label for="button" class="openNav" onclick></label>
+
+      <ul class="customNavSecond clearfix">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_us.html">About JJM</a></li>
+        <li><a href="javascript:void(0)">Dashboard</a></li>
+        <li><a href="javascript:void(0)">Grievance Redressal</a></li>
+        <li><a href="javascript:void(0)">User Management</a></li>
+        <li><a href="media.html" class="active">Media</a></li>
+        <li><a href="javascript:void(0)">Documents</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+
+      </ul>
+      </div>
+    </nav>
+    </div>
+  </header>
+  <!--./header-area-->
+
+      <section class="inner-intro media-img light-color overlay-before parallax-background">
+        <div class="container">
+          <div class="row title">
+            <h1 data-title="contact" class="text-white"><span>Media</span></h1>
+          </div>
+        </div>
+      </section>
+
+      <div class="bg-4 pb-5">
+      <div class="container">
+        <div class="empty-space marg-lg-b80 marg-md-b50 marg-xs-b30"></div>
+          
+          <div class="row">
+              <div class="col-md-8">
+                  <div class="tt-blog-item">
+                      <a class="tt-blog-item-img custom-hover" href="#">
+                          <img class="img-responsive" src="../assets/images/blog_lg_1.jpg" height="340" width="760" alt="">
+                      </a>
+                      <div class="tt-blog-item-info">
+                          <a class="tt-blog-item-title" href="#">Karnataka's Performance Has Been Praise-Worthy</a>
+                          <div class="simple-text size-3">
+                            <h6>Held a JalJeevanMission review meeting with Karnataka CM BSYBJP ji.</h6>
+                              <p>Karnataka's performance has been praise-worthy. The recent four-fold increase in centre's grant will help the state achieving target in time.</p>
+
+                              <p>I appreciate CM's efforts ...</p>
+                          </div>
+                          <a class="c-btn type-2 font-2 color-2" href="javascript: void(0)">Read more +</a>
+                          <div class="tt-blog-item-bottom clearfix">
+                              <div class="tt-blog-item-date mr-2">
+                                  <span>13</span>
+                                  July - 21
+                              </div>
+                              <div class="tt-blog-item-label">
+                                  <span>By: <a href="#">Twitter</a></span>
+                                  <span><a href="#">Keywords: Jal Jeevan Mission</a></span>
+                                  <!-- <span>Comments: <a href="#">8</a></span> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="empty-space marg-lg-b65 marg-md-b55"></div>
+
+                  <div class="tt-blog-item">
+                      <a class="tt-blog-item-img custom-hover" href="#">
+                          <img class="img-responsive" src="../assets/images/blog_lg_2.jpg" height="340" width="760" alt="">
+                      </a>
+                      <div class="tt-blog-item-info">
+                          <a class="tt-blog-item-title" href="#">Odisha Scales Height In Rainwater Harvesting, Builds 10K Structures In 75 Days</a>
+                          <div class="simple-text size-3">
+                              <p>Odisha has earned praise for its milestone achievement of setting up more than 10,000 rainwater harvesting structures (RWHS) to aid water conservation and groundwater recharge ahead of the onset of the southwest monsoon under ‘Catch the Rain’...</p>
+                          </div>
+                          <a class="c-btn type-2 font-2 color-2" href="#">Read more +</a>
+                          <div class="tt-blog-item-bottom clearfix">
+                              <div class="tt-blog-item-date mr-2">
+                                  <span>09</span>
+                                  July-2021
+                              </div>
+                              <div class="tt-blog-item-label">
+                                  <span>By: <a href="#">OMMCOM NEWS</a></span>
+                                  <span><a href="#">Rainwater Harvesting</a></span>
+                                  <!-- <span>Comments: <a href="#">8</a></span> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="empty-space marg-lg-b65 marg-md-b555"></div>
+
+                  <div class="tt-blog-item">
+                      <a class="tt-blog-item-img custom-hover" href="#">
+                          <img class="img-responsive" src="../assets/images/blog_lg_3.jpg" height="340" width="760" alt="">
+                      </a>
+                      <div class="tt-blog-item-info">
+                          <a class="tt-blog-item-title" href="#">Ensuring Water For The Marginalised-II</a>
+                          <div class="simple-text size-3">
+                              <p>Recognising the Right to Water by the judiciary will go a long way in providing access to the poor.</p>
+                              <p>Understanding Constitutional Right to Water is very important for the government in management, supply and ownership of water resources...</p>
+                          </div>
+                          <a class="c-btn type-2 font-2 color-2" href="#">Read more +</a>
+                          <div class="tt-blog-item-bottom clearfix">
+                              <div class="tt-blog-item-date mr-2">
+                                  <span>08</span>
+                                  July-2021
+                              </div>
+                              <div class="tt-blog-item-label">
+                                  <span>By: <a href="#">thehindubusinessline </a></span>
+                                  <span><a href="#">Tap Water Connection</a></span>
+                                  <!-- <span>Comments: <a href="#">8</a></span> -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="empty-space marg-lg-b65 marg-md-b55"></div>
+
+                  <ul class="tt-pagination">
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+                  </ul>
+                  <div class="empty-space marg-lg-b120 marg-md-b50 marg-xs-b30"></div>                                                  
+              </div>
+              <div class="col-md-4">
+                  <div class="pleft40">
+                      <h3 class="tt-block-title c-h5">Search</h3>
+                      <div class="empty-space marg-lg-b30"></div>
+                      <div class="tt-search">
+                          <form>
+                              <input type="text" placeholder="Enter Search Keywords">
+                              <div class="tt-search-submit">
+                                <i class="fa fa-search mt-3" aria-hidden="true"></i>
+                                  <input type="submit" value="">
+                              </div>
+                          </form>
+                      </div>
+                      <div class="empty-space marg-lg-b40 marg-md-b30"></div>
+
+                      <h3 class="tt-block-title c-h5">Media Type</h3>
+                      <div class="empty-space marg-lg-b30"></div>
+                      
+                      <ul class="tt-category">
+                          <li><a href="#"><i class="fa fa-angle-right"></i> Print Media</a></li>
+                          <li class="active"><a href="#"><i class="fa fa-angle-right"></i>  Social Media</a></li>
+                          <li class="active"><a href="#"><i class="fa fa-angle-right"></i>  All</a></li>
+                      </ul>
+                      <div class="empty-space marg-lg-b40 marg-md-b30"></div>
+
+                      <h3 class="tt-block-title c-h5">Popular Posts</h3>
+                      <div class="empty-space marg-lg-b30"></div>
+                      <div class="tt-spost clearfix">
+                          <a class="tt-spost-img custom-hover">
+                              <img class="img-responsive" src="../assets/images/blog_sm.jpg" height="92" width="120" alt="">
+                          </a>
+                          <div class="tt-spost-info">
+                              <a class="tt-spost-link" href="#">Joint Review On Planning And Implementation Of JJM.</a>
+                              <div class="simple-text font-2 text-uppercase">
+                                  <p>08 July 2021</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="empty-space marg-lg-b30"></div>
+                      <div class="tt-spost clearfix">
+                          <a class="tt-spost-img custom-hover">
+                              <img class="img-responsive" src="../assets/images/blog_sm_1.jpg" height="92" width="120" alt="">
+                          </a>
+                          <div class="tt-spost-info">
+                              <a class="tt-spost-link" href="#">Centre Hikes Allocation To Karnataka Under Jal Jeevan Mission</a>
+                              <div class="simple-text font-2 text-uppercase">
+                                  <p>08 July 2021</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="empty-space marg-lg-b30"></div>
+                      <div class="tt-spost clearfix">
+                          <a class="tt-spost-img custom-hover">
+                              <img class="img-responsive" src="../assets/images/blog_sm_2.jpg" height="92" width="120" alt="">
+                          </a>
+                          <div class="tt-spost-info">
+                              <a class="tt-spost-link" href="#">Jal Jeevan Mission’s Progress In 117 Poorest Districts Outpaces National Average.</a>
+                              <div class="simple-text font-2 text-uppercase">
+                                  <p>01 July 2021</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="empty-space marg-lg-b40 marg-md-b30"></div>
+
+                      <h3 class="tt-block-title c-h5 mb-4">Keywords</h3>
+
+                      <ul class="tt-tags">
+                        <li><a href="#">Jal Jeevan Mission</a></li>
+                        <li><a href="#">Rainwater Harvesting</a></li>
+                        <li><a href="#">Tap Water Connection</a></li>
+                        <li><a href="#"> Jal Jeevan Mission, Har Ghar Nal Se Jal</a></li>
+                        <li><a href="#">MInistry of Jal Shakti, Tap Water Connection</a></li>
+                        <li><a href="#">Maintenacne</a></li>
+                        <li class="active"><a href="#">All</a></li>
+                    </ul>
+
+                    <div class="empty-space marg-lg-b30"></div>
+
+                  </div>
+              </div>                    
+          </div>
+
+	            	            
+    </div>
+
+    </div>
+
+   <!--footer starts from here-->
+<footer class="footer">
+  <div class="container bottom_border">
+  <div class="row">
+  <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Contact us</h5>
+  <!--headin5_amrc-->
+  <p class="mb10">Office Of Mission Director<br/>
+    National Jal Jeevan Mission (NJJM)<br/>
+    Department Of Drinking Water And Sanitation<br/>
+    Ministry Of Jal Shakti, Government Of India
+    <p><i class="fa fa-location-arrow"></i> 4th Floor, Pandit Deendayal Antyodaya Bhawan, CGO Complex,
+    Lodhi Road, New Delhi-110003</p>
+    
+    
+    
+    
+   
+  <p><i class="fa fa-phone"></i>  Phone-011-24362705 /  Fax-011-24361062 </p>
+  <p><i class="fa fa fa-envelope"></i> <a href="mailto:njjm.ddws@gov.in">njjm.ddws@gov.in</a></p>
+  
+  
+  </div>
+  <div class=" col-sm-4 col-md  col-6 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Trends On Facebook</h5>
+  <!--headin5_amrc-->
+  <ul class="footer_ul2_amrc">
+    <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>'Har Ghar Jal' - Jal Jeevan Mission, Department of ...<a href="https://www.facebook.com/JalJeevanMissionIndia/">https://www.facebook.com/JalJeevanMissionIndia/</a></p></li>
+    <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>A multi-disciplinary team from National #JJM visited villages in #WestBengal ...<a href="https://www.facebook.com/JalJeevanMissionIndia/">https://www.facebook.com/JalJeevanMissionIndia/</a></p></li>
+    <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>Two more districts of #Haryana have become #HarGharJal, i.e. every rural household in...<a href="https://www.facebook.com/JalJeevanMissionIndia/">https://www.facebook.com/JalJeevanMissionIndia/</a></p></li>
+    </ul>
+  <!--footer_ul_amrc ends here-->
+     <div class="text-center">
+       <a href="https://www.facebook.com/JalJeevanMissionIndia/" style="font-size: 12px;" target="_blank">View All <i class="fa fa-arrow-right"></i> </a>
+     </div>
+  </div>
+  
+  
+  <div class=" col-sm-4 col-md  col-12 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Trends On Twitter</h5>
+  <!--headin5_amrc ends here-->
+  
+  <ul class="footer_ul2_amrc">
+  <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>State aims to make 5 districts in the current financial year. Above 3,600 villages of ...<a href="https://twitter.com/jaljeevan_">https://twitter.com/jaljeevan_</a></p></li>
+  <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>To accelerate the pace of implementation, Union Minister, Jal Shakti Sh. ...<a href="https://twitter.com/jaljeevan_">https://twitter.com/jaljeevan_</a></p></li>
+  <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>#UttarPradesh receives Rs. 2,400 Crore grant–in–aid against the allocation of Rs.10,870 Crore for the financial year 2021-22...<a href="https://twitter.com/jaljeevan_">https://twitter.com/jaljeevan_</a></p></li>
+  </ul>
+  <!--footer_ul2_amrc ends here-->
+
+  <div class="text-center">
+    <a href="https://twitter.com/jaljeevan_" style="font-size: 12px;" target="_blank">View All <i class="fa fa-arrow-right"></i> </a>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  <div class="container">
+  <p class="text-center mt-2">Copyright @2021 | Department of Drinking Water and Sanitation | Ministry of Jal Shakti</p>
+  
+  <ul class="social_footer_ul">
+  <li><a href="https://www.facebook.com/pages/category/Government-Organization/Jal-Jeevan-Mission-India-100947117940558/"><i class="fab fa-facebook-f"></i></a></li>
+  <li><a href="https://twitter.com/jaljeevan_" target="_blank"><i class="fab fa-twitter"></i></a></li>
+  <li><a href="https://www.linkedin.com/company/jal-jeevan-mission" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+  <li><a href="https://www.instagram.com/jaljeevanmission/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+  <!--social_footer_ul ends here-->
+  </div>
+  
+  </footer>
+
+
+
+  <!-- Chat bot UI start -->
+  <div class="chat-screen">
+    <div class="chat-header">
+        <div class="chat-header-title">
+            Let’s chat!
+        </div>
+        
+    </div>
+   
+    <div class="chat-body show">
+      <div id="webchat" role="main"></div>
+  
+    </div>
+   
+  
+  </div>
+  <div class="chat-bot-icon vert-move">
+
+    <span class="" ><img src="../assets/images/chatbot.png" ></span>
+    <span class="d-none" ><img src="../assets/images/close.png" ></span>
+   
+    
+  </div>
+  <!-- Chat Bot UI Ends -->
+
+    <!--page-specific - JavaScript-->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../assets/js/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../assets/js/custom-script.js"></script>
+
+
+    <script type="text/javascript" src="../assets/js/jquery.convform.js"></script>
+
+	
+    <script>
+      jQuery(function($){
+        convForm = $('#chat').convform({selectInputStyle: 'disable'});
+        console.log(convForm);
+      });
+    </script>
+  
+   <script>
+          $(document).ready(function(){
+              $(".select2_el").select2({
+              });
+          });
+          </script>
+  <script>
+       $(document).ready(function () {
+          //Toggle fullscreen
+          $(".chat-bot-icon").click(function (e) {
+              // $(this).children('img').toggleClass('hide');
+              $(this).children('span').toggleClass('d-none');
+              $('.chat-screen').toggleClass('show-chat');
+          });
+      
+      });
+
+        //Language change
+        $(document).on('change', '#language', function() {
+
+let changedValue = $("#language").val();
+if(changedValue == "हिंदी"){
+
+
+  window.location.href = "../mojs_hi/media.html"
+}
+else if(changedValue == "ଓଡିଆ"){
+  window.location.href = "../mojs_or/media.html"
+} 
+
+else{
+
+  window.location.href = "../mojs_en/media.html"
+
+}
+
+});
+
+ $(window).scroll(function(){
+        var sticky = $('.sticky'),
+            scroll = $(window).scrollTop();
+
+        if (scroll >= 100) sticky.addClass('fixed');
+        else sticky.removeClass('fixed');
+      });
+  
+  </script>
+  
+  <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+<script>
+   window.WebChat.renderWebChat(
+      {
+         directLine: window.WebChat.createDirectLine({
+    token: 'GIilB3QVZJE.QZu1XSyr9hmB-Jw3Mi4iZ85G3PL4CDp03_n8Y-fF4lg'
+         }),
+         userID: 'ajay.yadav@rmsi.com',
+         username: 'ajay.yadav@rmsi.com',
+         locale: 'en-US',
+         botAvatarInitials: 'WC',
+         userAvatarInitials: 'WW'
+      },
+      document.getElementById('webchat')
+   );
+</script>
+</body>
+</html>

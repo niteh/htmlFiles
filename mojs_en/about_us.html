@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | MOJS</title>
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"/>
+    <!-- Custom styles for this template-->
+    <link href="../assets/css/admin-theme.min.css" rel="stylesheet"/>
+    <link href="../assets/css/animate.css" rel="stylesheet"/>
+
+    <!--  Page specific Stylesheet  -->
+
+    <link href="../assets/css/custom_page.css" rel="stylesheet"/>
+
+     <!--Responsive-stylesheet for all-->
+
+     <link href="../assets/css/admin-theme-responsive.css" rel="stylesheet"/>
+     <link rel="shortcut icon" href="https://jaljeevanmission.gov.in/sites/default/files/favicon-16x16.png" type="image/png">
+
+
+      <!-- END GLOBAL MANDATORY STYLES -->
+      <link href="../assets/css/select2.min.css" rel="stylesheet" type="text/css"/>
+      <link href="../assets/css/chatBot.css" rel="stylesheet" type="text/css"/>
+      <link href="../assets/css/timeline.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" type="text/css" href="../assets/css/jquery.convform.css">
+ 
+      <!-- chatbot-->
+ 
+     <style>
+       html,
+       body {
+         height: 100%;
+       }
+ 
+       body {
+         margin: 0;
+         top: 0!important;
+       }
+ 
+  
+       #webchat {
+         height: 100%;
+         width: 100%;
+       }
+       .chat-body{ height: 320px; width: 350px; }
+ 
+       .chat-screen{
+           width: auto;
+       }
+       .chat-screen .chat-body {
+           padding: 0;
+       }
+ 
+       #webchat{width: 320px;}
+ 
+       .goog-te-banner-frame{
+ visibility: hidden!important;
+ display: none;
+ height: 0!important;
+ }
+ 
+       .goog-logo-link{display: none;}
+       .goog-te-gadget{
+   color: transparent !important;
+ 
+ }
+ .spinLoader {
+   display: none!important;
+ }
+ div.conv-form-wrapper div.wrapper-messages {
+   position: relative;
+   height: 300px;
+   max-height: 71vh;
+   overflow-y: scroll;
+   transition: margin 0.1s;
+ }
+ 
+ 
+ div.conv-form-wrapper div#messages {
+   max-height: 45vh;
+   height: auto !important;
+   overflow-y: scroll;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+ }
+     </style>
+    
+</head>
+<body>
+  <header>
+  <div class="sticky">
+    <!-- <div class="top-part__block ptb-15">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-7">
+            <label class="float-left custom-lbl">Select Language</label>
+            <div class="lang-div">
+            <select class="form-control">
+              <option>English</option>
+              <option>Hindi</option>
+              <option>Oriya</option>
+            </select>
+           </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="social-link__block text-right">
+              <a href="#"><img src="../assets/images/facebook_icon.png" /></a>
+              <a href="#"><img src="../assets/images/twitter.png" /></a>
+              <a href="#"><img src="../assets/images/linkedin.png" /></a>
+              <a href="#"><img src="../assets/images/google_plus.png" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="middel-part__block">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5 col-lg-5 bg_nav">
+            <div class="logo">
+              <a href="index.html"> <img src="../assets/images/dummy_logo_white.png" alt="Logo"> </a>
+            </div>
+          </div>
+          <div class="col-md-7 col-lg-7">
+
+            <ul class="rightNavArea">
+              <li>
+                <select class="form-control lang-div" id="language">
+                  <option selected><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">English</font></font></option>
+                      <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">हिंदी</font></font></option>
+                      <option><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ଓଡିଆ</font></font></option>
+                </select>
+              </li>
+              <li>
+                <div class="increaseTextSize">
+                <a id="largeFont"><img src="../assets/images/font_large.png"/></a> 
+              <a id="increaseFont"><img src="../assets/images/increase_font.png"/></a> 
+              <a id="decreaseFont"><img src="../assets/images/decrease_font.png"></a> 
+              <!-- <a id="smallFont">Small Font</a> -  -->
+              <a id="resetFont"><img src="../assets/images/reset_font.png"/></a>
+              </div>
+              </li>
+              <li>
+                <button class="btn btn-login btn-default" onclick="location.href='login.html'">Login</button>
+              </li>
+              <li class="JJM_logoR">
+                <a href="#"><img src="../assets/images/jjmlogo_right.png" alt="no-image"/></a>
+              </li>
+            </ul>
+            
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- core/navbar.component.html -->
+    <nav role="custom-dropdown">
+      <div class="searchItemRight">
+        <form>
+          <input type="text" placeholder="Search">
+          <span class="top-search-submit">
+            <i class="fa fa-search text-white" aria-hidden="true"></i>
+          </span>
+      </form>
+     </div><!--./searchItemRight-->
+      <div class="container-fluid">
+      <!-- <a href="/account/login" class="btn btn-warning btn-login pr-2">Login</a> -->
+      <input type="checkbox" id="button">
+      <label for="button" class="openNav" onclick></label>
+
+      <ul class="customNavSecond clearfix">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_us.html" class="active">About JJM</a></li>
+        <li><a href="javascript:void(0)">Dashboard</a></li>
+        <li><a href="javascript:void(0)">Grievance Redressal</a></li>
+        <li><a href="javascript:void(0)">User Management</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="javascript:void(0)" >Documents</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+
+      </ul>
+      </div>
+    </nav>
+	</div>
+  </header>
+  <!--./header-area-->
+
+      <section class="inner-intro about-img light-color overlay-before parallax-background">
+        <div class="container">
+          <div class="row title">
+            <h1 data-title="contact" class="text-secondary"><span>About Us</span></h1>
+          </div>
+        </div>
+      </section>
+
+      <div id="about-section" class="pt-80 pt-xs-60">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-8">
+              <div class="block-title v-line">
+                <h2><span>Our</span> MISSION</h2>
+                <p class="italic"> Jal Jeevan Mission is to assist, empower and facilitate:</p>
+              </div>
+              <div class="text-content ml-3">
+                <ul class="importLinkM">
+                  <li>
+                   
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp;  States/ UTs in planning of participatory rural water supply strategy for ensuring potable drinking water security on long-term basis to every rural household and public institution, viz. GP building, School, Anganwadi centre, Health centre, wellness centres, etc.</p>
+                  
+                  </li>
+                  <li>
+                   
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp;  States/ UTs for creation of water supply infrastructure so that every rural household has Functional Tap Connection (FHTC) by 2024 and water in adequate quantity of prescribed quality is made available on regular basis.</p>
+                  
+                  </li>
+                  <li>
+                   
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp;  States/ UTs to plan for their drinking water security.</p>
+                  
+                  </li>
+                  <li>
+                   
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp;  GPs/ rural communities to plan, implement, manage, own, operate and maintain their own in-village water supply systems.</p>
+                  
+                  </li>
+                  <li>
+                   
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp;  States/ UTs to develop robust institutions having focus on service delivery and financial sustainability of the sector by promoting utility approach.</p>
+                  
+                  </li>
+                  <li>
+                   
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp;  Capacity building of the stakeholders and create awareness in community on significance of water for improvement in quality of life.</p>
+                  
+                  </li>
+                  <li>
+                   
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp;  In making provision and mobilization of financial assistance to States/ UTs for implementation of the mission.</p>
+                  
+                  </li>
+
+                </ul>
+              </div>
+              <hr class="divider">
+              <div class="post-content">
+                <div class="post-img"> <img class="img-responsive" src="../assets/images/mission_bg.jpg" alt="Photo"> </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+              <div class="dark-bg our-vision light-color padding-40">
+                <div class="block-title">
+                  <h2 class="text-white"><span class="text-white">Our</span> VISION</h2>
+                  <!-- <p class="italic"> Aenean suscipit eget mi act </p> -->
+                </div>
+                <p> Every rural household has drinking water supply in adequate quantity of prescribed quality on regular and long-term basis at affordable service delivery charges leading to improvement in living standards of rural communities.</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="padding pt-xs-60">
+				
+              <div class="mv-block">
+              <div class="mv-block__mission mv-block__mission-bg">
+                <h3>Objectives</h3>
+                <p>The broad objectives of the Mission are:</p>
+                <div class="text-content">
+                  <ul class="importLinkM">
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To provide FHTC to every rural household.</p>
+                    </li>
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To prioritize provision of FHTCs in qualityaffected areas, villages in drought prone and desert areas, Sansad Adarsh Gram Yojana (SAGY) villages, etc.</p>
+                    </li>
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To provide functional tap connection to Schools, Anganwadi centres, GP buildings, Health centres, wellness centres and community buildings</p>
+                    </li>
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To monitor functionality of tap connections.</p>
+                    </li>
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To promote and ensure voluntary ownership among local community by way of contribution in cash, kind and/ or labour and voluntary labour (shramdaan)</p>
+                    </li>
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To assist in ensuring sustainability of water supply system, i.e. water source, water supply infrastructure, and funds for regular O&M</p>
+                    </li>
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To empower and develop human resource in the sector such that the demands of construction, plumbing, electrical, water quality management, water treatment, catchment protection, O&M, etc. are taken care of in short and long term</p>
+                    </li>
+                    <li>
+                     
+                       <p><i class="fa fa-arrow-circle-right"></i>&nbsp; To bring awareness on various aspects and significance of safe drinking water and involvement of stakeholders in manner that make water everyone's business</p>
+                    </li>
+                   
+                  </ul>
+
+
+                </div><!--./text-content-->
+              
+              <a href="#" class="mv-block__mission_link text-secondary"> Read More <i class="fa fa-chevron-circle-right mv-block__mission_link-arrow" aria-hidden="true"></i></a>
+              </div>
+              <div class="mv-block__vision mv-block__vision-bg">
+              <h3 class="text-white">Components Under JJM</h3>
+              <p>The following components are supported under JJM:</p>
+
+              <div class="text-content">
+                <ul class="importLinkM">
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Development of in-village piped water supply infrastructure to provide tap water connection to every rural household</p>
+                   </li>
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Development of reliable drinking water sources and/ or augmentation of existing sources to provide long-term sustainability of water supply system</p>
+                   </li>
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Wherever necessary, bulk water transfer, treatment plants and distribution network to cater to every rural household</p>
+                   </li>
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Technological interventions for removal of contaminants where water quality is an issue</p>
+                   </li>
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Retrofitting of completed and ongoing schemes to provide FHTCs at minimum service level of 55 lpcd;</p>
+                   </li>
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Greywater management</p>
+                   </li>
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Support activities, i.e. IEC, HRD, training, development of utilities, water quality laboratories, water quality testing & surveillance, R&D, knowledge centre, capacity building of communities, etc.</p>
+                   </li>
+                  <li>
+                     <p><i class="fa fa-arrow-circle-right"></i>&nbsp; Any other unforeseen challenges/ issues emerging due to natural disasters/ calamities which affect the goal of FHTC to every household by 2024, as per guidelines of Ministry of Finance on Flexi Funds</p>
+                   </li>
+
+                </ul>
+
+              </div>
+
+
+
+              <a href="#" class="mv-block__vision_link"> Read More <i class="fa fa-chevron-circle-right mv-block__vision_link-arrow" aria-hidden="true"></i></a>
+              </div>
+              </div>
+              
+            </div>
+
+          </div><!--./row-->
+
+
+
+
+        </div>
+      </div>
+<br/>
+   <!--footer starts from here-->
+<footer class="footer">
+  <div class="container bottom_border">
+  <div class="row">
+  <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Contact us</h5>
+  <!--headin5_amrc-->
+  <p class="mb10">Office Of Mission Director<br/>
+    National Jal Jeevan Mission (NJJM)<br/>
+    Department Of Drinking Water And Sanitation<br/>
+    Ministry Of Jal Shakti, Government Of India
+    <p><i class="fa fa-location-arrow"></i> 4th Floor, Pandit Deendayal Antyodaya Bhawan, CGO Complex,
+    Lodhi Road, New Delhi-110003</p>
+    
+    
+    
+    
+   
+  <p><i class="fa fa-phone"></i>  Phone-011-24362705 /  Fax-011-24361062 </p>
+  <p><i class="fa fa fa-envelope"></i> <a href="mailto:njjm.ddws@gov.in">njjm.ddws@gov.in</a></p>
+  
+  
+  </div>
+  <div class=" col-sm-4 col-md  col-6 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Trends On Facebook</h5>
+  <!--headin5_amrc-->
+  <ul class="footer_ul2_amrc">
+    <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>'Har Ghar Jal' - Jal Jeevan Mission, Department of ...<a href="https://www.facebook.com/JalJeevanMissionIndia/">https://www.facebook.com/JalJeevanMissionIndia/</a></p></li>
+    <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>A multi-disciplinary team from National #JJM visited villages in #WestBengal ...<a href="https://www.facebook.com/JalJeevanMissionIndia/">https://www.facebook.com/JalJeevanMissionIndia/</a></p></li>
+    <li><a href="#"><i class="fab fa-facebook-f fleft padding-right"></i> </a><p>Two more districts of #Haryana have become #HarGharJal, i.e. every rural household in...<a href="https://www.facebook.com/JalJeevanMissionIndia/">https://www.facebook.com/JalJeevanMissionIndia/</a></p></li>
+    </ul>
+  <!--footer_ul_amrc ends here-->
+     <div class="text-center">
+       <a href="https://www.facebook.com/JalJeevanMissionIndia/" style="font-size: 12px;" target="_blank">View All <i class="fa fa-arrow-right"></i> </a>
+     </div>
+  </div>
+  
+  
+  <div class=" col-sm-4 col-md  col-12 col">
+  <h5 class="headin5_amrc col_white_amrc pt2">Trends On Twitter</h5>
+  <!--headin5_amrc ends here-->
+  
+  <ul class="footer_ul2_amrc">
+  <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>State aims to make 5 districts in the current financial year. Above 3,600 villages of ...<a href="https://twitter.com/jaljeevan_">https://twitter.com/jaljeevan_</a></p></li>
+  <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>To accelerate the pace of implementation, Union Minister, Jal Shakti Sh. ...<a href="https://twitter.com/jaljeevan_">https://twitter.com/jaljeevan_</a></p></li>
+  <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>#UttarPradesh receives Rs. 2,400 Crore grant–in–aid against the allocation of Rs.10,870 Crore for the financial year 2021-22...<a href="https://twitter.com/jaljeevan_">https://twitter.com/jaljeevan_</a></p></li>
+  </ul>
+  <!--footer_ul2_amrc ends here-->
+
+  <div class="text-center">
+    <a href="https://twitter.com/jaljeevan_" style="font-size: 12px;" target="_blank">View All <i class="fa fa-arrow-right"></i> </a>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  <div class="container">
+  <p class="text-center mt-2">Copyright @2021 | Department of Drinking Water and Sanitation | Ministry of Jal Shakti</p>
+  
+  <ul class="social_footer_ul">
+  <li><a href="https://www.facebook.com/pages/category/Government-Organization/Jal-Jeevan-Mission-India-100947117940558/"><i class="fab fa-facebook-f"></i></a></li>
+  <li><a href="https://twitter.com/jaljeevan_" target="_blank"><i class="fab fa-twitter"></i></a></li>
+  <li><a href="https://www.linkedin.com/company/jal-jeevan-mission" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+  <li><a href="https://www.instagram.com/jaljeevanmission/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+  </ul>
+  <!--social_footer_ul ends here-->
+  </div>
+  
+  </footer>
+
+  <!-- Chat bot UI start -->
+  <div class="chat-screen">
+    <div class="chat-header">
+        <div class="chat-header-title">
+            Let’s chat!
+        </div>
+        
+    </div>
+   
+    <div class="chat-body show">
+      <div id="webchat" role="main"></div>
+  
+    </div>
+   
+  
+  </div>
+  <div class="chat-bot-icon vert-move">
+
+    <span class="" ><img src="../assets/images/chatbot.png" ></span>
+    <span class="d-none" ><img src="../assets/images/close.png" ></span>
+   
+    
+  </div>
+  <!-- Chat Bot UI Ends -->
+
+    <!--page-specific - JavaScript-->
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="../assets/js/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../assets/js/custom-script.js"></script>
+
+
+    <script type="text/javascript" src="../assets/js/jquery.convform.js"></script>
+
+	
+    <script>
+      jQuery(function($){
+        convForm = $('#chat').convform({selectInputStyle: 'disable'});
+        console.log(convForm);
+      });
+    </script>
+  
+   <script>
+          $(document).ready(function(){
+              $(".select2_el").select2({
+              });
+          });
+          </script>
+  <script>
+      $(document).ready(function () {
+          //Toggle fullscreen
+          $(".chat-bot-icon").click(function (e) {
+              // $(this).children('img').toggleClass('hide');
+              $(this).children('span').toggleClass('d-none');
+              $('.chat-screen').toggleClass('show-chat');
+          });
+      
+      });
+       
+    //Language change
+    $(document).on('change', '#language', function() {
+
+let changedValue = $("#language").val();
+if(changedValue == "हिंदी"){
+
+
+  window.location.href = "../mojs_hi/about_us.html"
+}
+else if(changedValue == "ଓଡିଆ"){
+  window.location.href = "../mojs_or/about_us.html"
+} 
+
+else{
+
+  window.location.href = "../mojs_en/about_us.html"
+
+}
+
+});
+
+ $(window).scroll(function(){
+        var sticky = $('.sticky'),
+            scroll = $(window).scrollTop();
+
+        if (scroll >= 100) sticky.addClass('fixed');
+        else sticky.removeClass('fixed');
+      });
+  
+  </script>
+  
+  <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+<script>
+   window.WebChat.renderWebChat(
+      {
+         directLine: window.WebChat.createDirectLine({
+    token: 'GIilB3QVZJE.QZu1XSyr9hmB-Jw3Mi4iZ85G3PL4CDp03_n8Y-fF4lg'
+         }),
+         userID: 'ajay.yadav@rmsi.com',
+         username: 'ajay.yadav@rmsi.com',
+         locale: 'en-US',
+         botAvatarInitials: 'WC',
+         userAvatarInitials: 'WW'
+      },
+      document.getElementById('webchat')
+   );
+</script>
+</body>
+</html>
